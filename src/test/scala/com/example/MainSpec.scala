@@ -1,11 +1,13 @@
 package com.example
 
-import org.scalatest.{ WordSpec, Matchers }
-import org.scalatest.prop.Checkers
-import org.scalacheck._
-import org.scalacheck.Prop._
+import org.scalacheck.*
+import org.scalacheck.Prop.*
 
-class MainSpec extends WordSpec with Matchers with Checkers {
+import org.scalatest.wordspec.AnyWordSpec
+import org.scalatest.matchers.should.Matchers
+import org.scalatestplus.scalacheck.Checkers
+
+class MainSpec extends AnyWordSpec with Matchers with Checkers {
   "excite" should {
     "shout everything" in {
       check { (s: String) =>
